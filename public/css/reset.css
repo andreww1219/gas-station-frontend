@@ -1,0 +1,19 @@
+:root{
+    --active-clr: rgb(255,237,142);
+    --bkg-clr: rgb(157,186,220);
+    --light-bkg-clr: rgb(216,228,239);
+}
+body{
+    margin: 0;
+    border: 0;
+}
+@media screen  and (max-width: 1250px){
+    html{
+        font-size: 12px;
+    }
+}
+@media screen and (min-width: 1251px){
+    html{
+        font-size: 16px;
+    }
+}

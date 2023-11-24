@@ -1,0 +1,19 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    },
+    {
+      "path": "./tsconfig.app.json"
+    }
+  ],
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "target": "esnext",
+    "module": "es2022",
+    "strict": false,
+    "jsx": "preserve",
+    "moduleResolution": "Node"
+  }
+}

@@ -1,0 +1,135 @@
+<script setup>
+
+</script>
+
+<template>
+ <el-main>
+
+  <div class="blue-box" style="height: 78vh;">
+    
+    <div class="white-block left-block">
+     <el-header class="common-style hold">
+      <div class="text">待检测图片</div>
+    </el-header>
+    <el-main>
+    <img src="/src/assets/img/piclook.png" class="image"/>
+    </el-main> 
+      <el-button class="common-button choose">选择检测图片</el-button><el-button class="common-button sure">确认上传</el-button>
+    </div>
+
+    <span class="white-text">说明：图片处理功能，需要上传一张照片，然后点击检测按钮，等待结果检出；若重复检测相同照片，则直接显示上次检测结果。</span>
+
+    <div class="white-block right-block">
+      <el-header class="common-style result">
+      <div class="text">检测结果</div>
+      </el-header>
+      <el-main>
+      <img src="/src/assets/img/picres.png" class="image"/>
+      </el-main> 
+      <el-button class="common-button clear">清除已检测缓存</el-button>
+    </div>
+    
+  </div>
+  
+ </el-main>
+</template>
+
+<style>
+.blue-box {
+  background-color: rgb(157,186,220);
+  border-radius: 30px;
+  display: flex;
+  margin-right: 7%;
+  margin-bottom: auto;
+}
+.white-text {
+  color: white;
+  font-size: 14px;
+  margin-top: 1.5%;
+  padding-left: 7%;
+  padding-top: 1.2%;
+}
+.white-block {
+  background-color: white;
+  border-radius: 30px;
+  width: 36%; 
+  height: 60%;
+  position: absolute;
+  bottom: 13%; 
+}
+.left-block {
+  margin-left: 7%;
+} 
+.right-block {
+  right: 16%;
+}
+
+.common-style {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 34%;
+  margin-top: 6%;
+  margin-bottom:-2%;
+  font-size: 1rem;
+  color: #000;
+  width: 30%;
+  height: 10%;
+  padding: 3%;
+  border: 1px solid #000;
+  border-color: #000;
+  border-radius: 10px;
+}
+.hold {
+  background-color: rgb(205 227 255);
+}
+.result {
+  background-color: rgb(255, 250, 183);
+}
+.text {
+  text-align: center; 
+}
+
+.common-button{
+  margin-top:4%;
+  font-size: 1rem;
+  color: #000;
+  height: 7%;
+  padding: 3%;
+  border-color: #000;
+  --el-button-hover-text-color: #000;
+  --el-button-hover-border-color: #000;
+  border-radius: 15px;
+}
+.common-button:hover{
+  font-size: 1.1rem;
+}
+.choose{
+  margin-left: 14%;
+  width: 38%;
+  background-color: rgb(205 227 255);
+  --el-button-hover-bg-color: #abd0fd;
+}
+.sure{
+  width: 29%;
+  background-color: rgb(255, 206, 150);
+  --el-button-hover-bg-color: #ffc16f;
+}
+.clear{
+  margin-left: 31%;
+  width: 38%;
+  background-color: rgb(255, 251, 222);
+  --el-button-hover-bg-color: #fdf7ab;
+}
+
+.image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left:6%;
+  margin-bottom:-5%;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+</style>
