@@ -56,4 +56,5 @@ const closebox = defineEmits(['close']);
   font-size: 12px; 
   margin-top:-4%;
 }
+
 </style>

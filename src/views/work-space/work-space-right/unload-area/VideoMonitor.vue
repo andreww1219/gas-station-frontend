@@ -95,4 +95,5 @@ const confirm = () => {
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 9999;
 }
+
 </style>
