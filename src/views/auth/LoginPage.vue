@@ -40,6 +40,7 @@ const loginStore = useLoginStore()
   </el-main>
 
 </template>
+
 <style lang="less" scoped>
 @import "@/assets/css/AuthPageRight.less";
 .formBottom{
