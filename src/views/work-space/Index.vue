@@ -1,7 +1,3 @@
-<!--
-*@author andrew
-*@date 2023/11/10 11:08
--->
 <script setup>
 import { RouterView} from "vue-router";
 import {useRoute} from "vue-router";

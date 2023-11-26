@@ -27,7 +27,7 @@ const closebox = defineEmits(['close']);
   background-size: cover;
 }
 .image-container {
-  background-image: url('/src/assets/img/thebox.png');
+  background-image: url('/src/assets/img/box.png');
   background-position: top left;
   background-repeat: no-repeat;
   background-size: contain;

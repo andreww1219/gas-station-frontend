@@ -61,4 +61,8 @@ const loginStore = useLoginStore()
   color: rgb(157,186,220);
   border-color: rgb(157,186,220);
 }
+.form-container {
+  width: 85%; 
+  margin: 0 auto; 
+}
 </style>

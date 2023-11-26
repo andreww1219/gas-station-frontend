@@ -18,43 +18,50 @@ const closebox = defineEmits(['close']);
 .message-box {
   background-color: white;
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 30px;
   text-align: center;
-  width: 25%;
-  height: 42%;
-  border-radius: 25px;
-  background-image: linear-gradient(to bottom, #daeffd 63%, #ffffff 37%);
+  width: 50%;
+  max-width: 350px;
+  height: auto;
+  margin: 0 auto;
+  background-image: linear-gradient(to bottom, #daeffd 60%, #ffffff 40%);
   background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 .image-container {
-  background-image: url('/src/assets/img/thebox.png');
-  background-position: top left;
+  background-image: url('/src/assets/img/box.png');
+  background-position: top;
   background-repeat: no-repeat;
   background-size: contain;
-  margin-left:7%;
-  margin-top: -100px;
   width: 100%;
-  height: 100%;
+  height: 250px;
+  margin-top: -30%;
   border-radius: 25px 25px 0 0;
 }
+
+h3 {
+  margin-top: 10px;
+}
+
 .tick {
-  margin-top:4%;
   font-size: 1rem;
   color: #000;
-  padding: 3%;
+  padding: 8px;
   border-color: #000;
   --el-button-hover-text-color: #000;
   --el-button-hover-border-color: #000;
   border-radius: 20px;
-  height: 13%;
-  width: 40%;
-  margin-top:-0.7%;
+  width: 60%;
   background-color: rgb(205 227 255);
   --el-button-hover-bg-color: #abd0fd;
 }
+
 .message {
-  font-size: 12px; 
-  margin-top:-4%;
+  font-size: 12px;
+  margin-top: -10px;
 }
 
 </style>

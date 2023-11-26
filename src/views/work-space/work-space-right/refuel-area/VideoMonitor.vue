@@ -1,6 +1,7 @@
 <script setup>
 import MessageBox from "./message-box.vue";
-import { ref } from 'vue';
+import {formatTime} from "@/utils/format";
+import {computed, ref} from "vue";
 
 let isDialogVisible = ref(false);
 
@@ -12,6 +13,10 @@ const confirm = () => {
   isDialogVisible.value = false;
 };
 
+const currentDate = new Date();
+const currentTime = ref(formatTime(currentDate.toISOString()));;
+
+
 </script>
 
 <template>
@@ -21,6 +26,7 @@ const confirm = () => {
     <el-container>
       
       <el-header class="introduction">广东省深圳市南山区深圳大学加油站点</el-header>
+      <div class="time-display">{{ currentTime }}</div>
       <el-button class="alarm" @click.native="showDialog">一键报警</el-button>
       <el-main class="main-white"></el-main>
     </el-container>
@@ -94,6 +100,12 @@ const confirm = () => {
   align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 9999;
+}
+.time-display{
+  margin-left:7.5%;
+  font-size: 14px;
+  margin-top: 1%;
+  margin-bottom: -3%;
 }
 
 </style>

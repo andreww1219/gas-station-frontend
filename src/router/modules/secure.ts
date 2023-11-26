@@ -1,5 +1,6 @@
+import type { RouteRecordRaw } from "vue-router";
 
-const SecureRouter = {
+const SecureRouter:RouteRecordRaw = {
     path: '/secure',
     redirect: '/secure/regulations',
     component: () => import('@/views/work-space/work-space-right/Index.vue'),
@@ -12,7 +13,7 @@ const SecureRouter = {
         },
         {
             path: 'emergency-plan',
-            component: () => import('@/views/auth/Index.vue'),
+            component: () => import('@/views/work-space/work-space-right/secure/EmergencyPlan.vue'),
             meta: { title: '应急预案' }
         },
         {

@@ -52,14 +52,29 @@
 .white-block {
   background-color: white;
   border-radius: 30px;
-  width: 36%; 
+  width: 36%;
   height: 60%;
   position: absolute;
-  bottom: 13%; 
+  bottom: 13%;
+  .el-main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left:6%;
+    margin-bottom:-5%;
+    max-width: 100%;
+    max-height: 100%;
+    .image {
+      cursor: pointer;
+      margin-top: 5%;
+      width: 90%;
+      height: 90%;
+    }
+  }
 }
 .left-block {
   margin-left: 7%;
-} 
+}
 .right-block {
   right: 16%;
 }
@@ -68,7 +83,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 34%;
+  margin-left: 37%;
   margin-top: 6%;
   margin-bottom:-2%;
   font-size: 1rem;
@@ -77,7 +92,6 @@
   height: 10%;
   padding: 3%;
   border: 1px solid #000;
-  border-color: #000;
   border-radius: 10px;
 }
 .hold {
@@ -87,7 +101,7 @@
   background-color: rgb(255, 250, 183);
 }
 .text {
-  text-align: center; 
+  text-align: center;
 }
 
 .common-button{
@@ -99,37 +113,28 @@
   border-color: #000;
   --el-button-hover-text-color: #000;
   --el-button-hover-border-color: #000;
-  border-radius: 15px;
+  border-radius: 0.8rem;
+  transition: 0.5s;
 }
 .common-button:hover{
   font-size: 1.1rem;
 }
 .choose{
-  margin-left: 14%;
+  margin-left: 16%;
   width: 38%;
   background-color: rgb(205 227 255);
   --el-button-hover-bg-color: #abd0fd;
 }
 .sure{
-  width: 29%;
+  width: 35%;
   background-color: rgb(255, 206, 150);
   --el-button-hover-bg-color: #ffc16f;
 }
 .clear{
-  margin-left: 31%;
+  margin-left: 34%;
   width: 38%;
   background-color: rgb(255, 251, 222);
   --el-button-hover-bg-color: #fdf7ab;
-}
-
-.image {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left:6%;
-  margin-bottom:-5%;
-  max-width: 90%;
-  max-height: 90%;
 }
 
 </style>

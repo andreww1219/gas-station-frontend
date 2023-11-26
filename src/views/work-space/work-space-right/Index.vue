@@ -1,7 +1,3 @@
-<!--
-*@author andrew
-*@date 2023/11/21 22:56
--->
 <script setup>
 import {RouterView, useRoute} from "vue-router";
 import generateRoutes from "@/assets/js/generateRoutes";
