@@ -4,7 +4,6 @@ import {formatTime} from "@/utils/format";
 import {computed, ref} from "vue";
 
 let isDialogVisible = ref(false);
-
 const showDialog = () => {
   isDialogVisible.value = true;
 };
@@ -20,29 +19,33 @@ const currentTime = ref(formatTime(currentDate.toISOString()));;
 </script>
 
 <template>
-<div>
- <el-main>
-  <div class="blue-box" style="height: 78vh;">
-    <el-container>
-      
-      <el-header class="introduction">广东省深圳市南山区深圳大学加油站点</el-header>
-      <div class="time-display">{{ currentTime }}</div>
-      <el-button class="alarm" @click.native="showDialog">一键报警</el-button>
-      <el-main class="main-white"></el-main>
-    </el-container>
-    <el-aside>
-      <div class="aside-content">识别参数：</div>
-    </el-aside>
-  </div>
- </el-main>
+  <div>
+    <el-main>
+      <div class="blue-box" style="height: 78vh;">
+        <el-container>
 
- <div class="popup-container" v-if="isDialogVisible">
+          <el-header class="introduction">广东省深圳市南山区深圳大学加油站点</el-header>
+          <div class="time-display">{{ currentTime }}</div>
+          <el-button class="alarm" @click.native="showDialog">一键报警</el-button>
+          <el-main class="main-white" style="display: flex; flex-flow:column; align-items: center; justify-content: center;" >
+            <video  style="width: 100%; height: 100%"  autoplay="autoplay">
+              <source src="/src/assets/img/video.mp4" type="video/mp4" >
+            </video>
+          </el-main>
+        </el-container>
+        <el-aside>
+          <div class="aside-content">识别参数：</div>
+        </el-aside>
+      </div>
+    </el-main>
+
+    <div class="popup-container" v-if="isDialogVisible">
       <MessageBox @close="confirm" />
- </div>
-</div>
+    </div>
+  </div>
 </template>
 
-<style>
+<style lang="less" scoped>
 .main-white {
   background-color: white;
   border-radius: 10px;
@@ -77,9 +80,9 @@ const currentTime = ref(formatTime(currentDate.toISOString()));;
 }
 .alarm {
   background-color: rgb(250, 120, 120);
-  color: white; 
+  color: white;
   width:18%;
-  margin-left: 68%; 
+  margin-left: 68%;
   margin-bottom:2%;
   border-color: #000;
   --el-button-hover-text-color: #ffffff;

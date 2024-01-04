@@ -1,37 +1,55 @@
 <script setup>
+import {ref} from "vue";
 
+const imgUpload = ref()
+const img = ref()
+const upload = (e) => {
+  let file = e.target.files[0]
+  if(file){
+    // replace img with the file
+    img.value.src = window.URL.createObjectURL(file)
+    // create form data
+    let formData = new FormData()
+    formData.append('file', file)
+  }else{
+    alert('获取图片失败')
+  }
+}
 </script>
 
 <template>
- <el-main>
+  <el-main>
 
-  <div class="blue-box" style="height: 78vh;">
-  <div class="white-block left-block">
-     <el-header class="common-style hold">
-      <div class="text">待检测图片</div>
-    </el-header>
-    <el-main>
-    <img src="/src/assets/img/piclook.png" class="image"/>
-    </el-main> 
+    <div class="blue-box" style="height: 78vh;">
+      <input type="file" formmethod="post" name="img"
+             accept="image/*" hidden
+             ref="imgUpload" @change="upload($event)" >
+      <div class="white-block left-block">
+        <el-header class="common-style hold">
+          <div class="text">待检测图片</div>
+        </el-header>
+        <el-main>
+          <img src="/src/assets/img/piclook.png" ref="img" class="image" @click="imgUpload.click"/>
+        </el-main>
+        <el-button class="common-button choose" >选择检测图片</el-button>
+        <el-button class="common-button sure" @click="img.src='/src/assets/img/加油站.png'">确认上传</el-button>
+      </div>
 
-      <el-button class="common-button choose">选择检测图片</el-button><el-button class="common-button sure">确认上传</el-button>
+      <span class="white-text">说明：图片处理功能，需要上传一张照片，然后点击检测按钮，等待结果检出；若重复检测相同照片，则直接显示上次检测结果。</span>
+
+      <div class="white-block right-block">
+        <el-header class="common-style result">
+          <div class="text">检测结果</div>
+        </el-header>
+        <el-main>
+          <img src="/src/assets/img/picres.png" class="image"/>
+        </el-main>
+        <el-button class="common-button clear">清除已检测缓存</el-button>
+      </div>
+
     </div>
 
-    <span class="white-text">说明：图片处理功能，需要上传一张照片，然后点击检测按钮，等待结果检出；若重复检测相同照片，则直接显示上次检测结果。</span>
-
-    <div class="white-block right-block">
-      <el-header class="common-style result">
-      <div class="text">检测结果</div>
-      </el-header>
-      <el-main>
-      <img src="/src/assets/img/picres.png" class="image"/>
-      </el-main> 
-      <el-button class="common-button clear">清除已检测缓存</el-button>
-    </div>
-  </div>
-  
-
- </el-main>
+  </el-main>
 </template>
 
 <style>
@@ -57,10 +75,12 @@
   position: absolute;
   bottom: 13%;
   .el-main{
+    width: 95%;
+    height:70%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left:6%;
+    margin-left:4%;
     margin-bottom:-5%;
     max-width: 100%;
     max-height: 100%;
@@ -105,7 +125,7 @@
 }
 
 .common-button{
-  margin-top:4%;
+  margin-top:5%;
   font-size: 1rem;
   color: #000;
   height: 7%;
@@ -120,7 +140,7 @@
   font-size: 1.1rem;
 }
 .choose{
-  margin-left: 16%;
+  margin-left: 15%;
   width: 38%;
   background-color: rgb(205 227 255);
   --el-button-hover-bg-color: #abd0fd;
