@@ -31,7 +31,7 @@ const loginStore = useLoginStore()
         </RouterLink>
       </el-form>
       <div class="formBottom">
-        <el-button>登录</el-button>
+        <el-button @click="$router.push('/work-space')">登录</el-button>
         <div class="register-link" @click="$router.replace('/auth/register')">
           还没有账号? 注册
         </div>
@@ -62,7 +62,7 @@ const loginStore = useLoginStore()
   border-color: rgb(157,186,220);
 }
 .form-container {
-  width: 85%; 
-  margin: 0 auto; 
+  width: 85%;
+  margin: 0 auto;
 }
 </style>
