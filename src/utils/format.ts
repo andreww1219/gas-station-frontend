@@ -5,9 +5,9 @@ function format(x: number): string {
 export function formatTime(dateString: string): string {
 	const date = new Date(dateString)
 	let y = date.getFullYear()
-	let m = format(date.getMonth() + 1)
+	let m = format(date.getMonth())
 	let d = format(date.getDate())
 	let h = format(date.getHours())
 	let mm = format(date.getMinutes())
-	return `${y}-${m}-${d} ${h}:${mm}`
+	return `${y}-${m+1}-${d} ${h}:${mm}`
 }
